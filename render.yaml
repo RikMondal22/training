@@ -1,7 +1,7 @@
 services:
-  # Backend API Service
+  # CSV-Based Backend Service (No Database!)
   - type: web
-    name: bsk-backend
+    name: bsk-csv-app
     env: python
     region: singapore
     plan: free
@@ -11,8 +11,6 @@ services:
       python -c "import nltk; nltk.download('stopwords', quiet=True)"
     startCommand: cd backend && python run.py
     envVars:
-      - key: DATABASE_URL
-        sync: false
       - key: PYTHON_VERSION
         value: 3.12.0
       - key: RENDER
@@ -20,21 +18,4 @@ services:
       - key: ALLOWED_ORIGINS
         value: "*"
     healthCheckPath: /health
-    autoDeploy: true
-
-  # Frontend Streamlit Service  
-  - type: web
-    name: bsk-frontend
-    env: python
-    region: singapore
-    plan: free
-    buildCommand: |
-      pip install --upgrade pip
-      pip install -r requirements.txt
-    startCommand: cd frontend && streamlit run app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true
-    envVars:
-      - key: BACKEND_URL
-        sync: false
-      - key: PYTHON_VERSION
-        value: 3.12.0
     autoDeploy: true

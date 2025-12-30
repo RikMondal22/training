@@ -57,7 +57,7 @@ Thumbs.db
 
 # Test data
 test_data/
-*.csv
+
 *.xlsx
 
 # Test scripts
