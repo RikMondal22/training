@@ -1,0 +1,38 @@
+name: bskwebel
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.13
+  - scikit-learn
+  - pandas
+  - numpy
+  - pip
+  - pip:
+    - fastapi
+    - uvicorn
+    - sqlalchemy
+    - psycopg2-binary
+    - python-dotenv
+    - pydantic
+    - python-jose[cryptography]
+    - passlib[bcrypt]
+    - python-multipart
+    - transformers
+    - torch
+    - nltk
+    - streamlit
+    - plotly
+    - streamlit-option-menu
+    - streamlit-autorefresh
+    - pytest
+    - pytest-asyncio
+    - sentence-transformers
+    - geopy
+    - streamlit-folium
+    - requests
+    - joblib
+    - chromadb
+    - pydeck
+    - matplotlib
+    - seaborn 
